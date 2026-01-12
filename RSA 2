@@ -5,13 +5,13 @@ from pwn import *
 pr = process("/challenge/run")
 
 pr.recvuntil(b"p = 0x")
-n = int(pr.recvline().strip().decode(), 16)
+p = int(pr.recvline().strip().decode(), 16)
 
 pr.recvuntil(b"e = 0x")
 e = int(pr.recvline().strip().decode(), 16)
 
 pr.recvuntil(b"q = 0x")
-d = int(pr.recvline().strip().decode(), 16)
+q = int(pr.recvline().strip().decode(), 16)
 
 pr.recvuntil(b"Flag Ciphertext (hex): ")
 flag = int(pr.recvline().strip().decode(), 16)
