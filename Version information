@@ -1,0 +1,18 @@
+/challenge/cimg
+vim test.py
+
+cat /challenge/cimg
+    
+    header = file.read1(6)
+    assert len(header) == 6, "ERROR: Failed to read header!"
+    assert header[:4] == b"<0%r", "ERROR: Invalid magic number!"
+    assert int.from_bytes(header[4:6], "little") == 125, "ERROR: Invalid version!"
+
+#!/bin/python
+
+with open("example.cimg", "wb") as file:
+    file.write(b"<0%r")
+    file.write((125).to_bytes(2, "little"))
+
+./test.py
+/challenge/cimg example.cimg
