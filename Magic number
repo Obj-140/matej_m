@@ -1,0 +1,6 @@
+/challenge/cimg
+header 4B
+echo --> example.cimg --> reťazec "abcd"
+nesprávny magic number
+/challenge/cimg ešte raz => magic number v tvare b""
+/challenge/cimg example.cimg
